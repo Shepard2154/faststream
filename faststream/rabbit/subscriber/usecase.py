@@ -66,6 +66,7 @@ class LogicSubscriber(
         broker_middlewares: Sequence["BrokerMiddleware[IncomingMessage]"],
         # AsyncAPI args
         title_: Optional[str],
+        operation_id_: str,
         description_: Optional[str],
         include_in_schema: bool,
     ) -> None:
@@ -82,6 +83,7 @@ class LogicSubscriber(
             broker_dependencies=broker_dependencies,
             # AsyncAPI
             title_=title_,
+            operation_id_=operation_id_,
             description_=description_,
             include_in_schema=include_in_schema,
         )

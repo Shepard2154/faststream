@@ -43,6 +43,7 @@ class RabbitRegistrator(ABCBroker["IncomingMessage"]):
         queue: Union[str, "RabbitQueue"],
         exchange: Union[str, "RabbitExchange", None] = None,
         *,
+        operation_id: Optional[str] = None,
         consume_args: Optional["AnyDict"] = None,
         dependencies: Iterable["Depends"] = (),
         parser: Optional["CustomCallable"] = None,
@@ -122,6 +123,7 @@ class RabbitRegistrator(ABCBroker["IncomingMessage"]):
                     # AsyncAPI
                     title_=title,
                     description_=description,
+                    operation_id_=operation_id,
                     include_in_schema=self._solve_include_in_schema(include_in_schema),
                 )
             ),

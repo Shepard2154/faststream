@@ -41,6 +41,7 @@ class AsyncAPISubscriber(LogicSubscriber):
                             location="$message.header#/correlation_id"
                         ),
                     ),
+                    operationId=self.operation_id_,
                 ),
                 bindings=ChannelBinding(
                     amqp=amqp.ChannelBinding(

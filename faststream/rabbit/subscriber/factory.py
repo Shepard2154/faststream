@@ -32,6 +32,7 @@ def create_subscriber(
     broker_middlewares: Sequence["BrokerMiddleware[IncomingMessage]"],
     # AsyncAPI args
     title_: Optional[str],
+    operation_id_: str,
     description_: Optional[str],
     include_in_schema: bool,
 ) -> AsyncAPISubscriber:
@@ -58,6 +59,7 @@ def create_subscriber(
         broker_dependencies=broker_dependencies,
         broker_middlewares=broker_middlewares,
         title_=title_,
+        operation_id_=operation_id_,
         description_=description_,
         include_in_schema=include_in_schema,
     )

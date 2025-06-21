@@ -105,6 +105,7 @@ class SubscriberUsecase(
         default_decoder: "AsyncCallable",
         # AsyncAPI information
         title_: Optional[str],
+        operation_id_: str,
         description_: Optional[str],
         include_in_schema: bool,
     ) -> None:
@@ -135,6 +136,7 @@ class SubscriberUsecase(
 
         # AsyncAPI
         self.title_ = title_
+        self.operation_id_ = operation_id_
         self.description_ = description_
         self.include_in_schema = include_in_schema
 
